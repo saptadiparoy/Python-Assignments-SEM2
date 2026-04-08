@@ -1,4 +1,6 @@
 #to handle filenotfound and permissionerror when trying to open a file
+#syntax is - try:, except:, else:, finally:
+
 def file_errors ():
     filename = input("enter file name with extension:   ")
     try:
