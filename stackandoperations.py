@@ -1,6 +1,6 @@
 #stack and operations on stack
 #push, pop, peek, size, if empty, exit
-class stack:
+class Stack:
     def __init__(self):
         self.stack = []
 
@@ -29,31 +29,35 @@ class stack:
     def size(self):
         return len(self.stack)
     
+def menu():
+    stack = Stack()
+    while True:
+        print("\n1. Push\n2. Pop\n3. Peek\n4. Is Empty\n5. Size\n6. Exit")
+    
+        choice = (int(input("Enter your choice: ")))
+        if choice == 1:
+            item = int(input("Enter Element to push: "))
+            stack.push(item)
+            print (f"stack after push: {stack.stack}")
+    
+        elif choice == 2:
+            print (f"Element popped: {stack.pop()}")
+            print (f"stack after pop: {stack.stack}")
+    
+        elif choice == 3:
+            print (f"Element at top of stack: {stack.peek()}")
+    
+        elif choice == 4:
+            print (stack.ifempty())
+    
+        elif choice == 5:
+            print (f"Size of stack: {stack.size()}")
+    
+        elif choice == 6:
+            print ("Exiting program.")
+            break
+        else:
+            print ("Invalid choice, try again!")
 
-while True:
-    print("\n1. Push\n2. Pop\n3. Peek\n4. Is Empty\n5. Size\n6. Exit")
-
-    choice = (int(input("Enter your choice: ")))
-    if choice == 1:
-        item = int(input("Enter Element to push: "))
-        stack.push(item)
-        print (f"stack after push: {stack.stack}")
-
-    elif choice == 2:
-        print (f"Element popped: {stack.pop()}")
-        print (f"stack after pop: {stack.stack}")
-
-    elif choice == 3:
-        print (f"Element at top of stack: {stack.peek()}")
-
-    elif choice == 4:
-        print (stack.ifempty())
-
-    elif choice == 5:
-        print (f"Size of stack: {stack.size()}")
-
-    elif choice == 6:
-        print ("Exiting program.")
-        break
-    else:
-        print ("Invalid choice, try again!")
+if __name__ == "__main__":
+    menu()
